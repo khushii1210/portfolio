@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import SkillsExperience from './components/FeaturedProject';
+import Contact from './components/Features';
+import Footer from './components/Footer';
+import WebProjects from './pages/WebProjects';
+import UXProjects from './pages/UXProjects';
+import useScrollSmoother from './hooks/useScrollSmoother';
 import './App.css';
 
 function App() {
+  useScrollSmoother();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          <div className="App">
+            <Header />
+            <Hero />
+            <Services />
+            <SkillsExperience />
+            <Contact />
+            <Footer />
+          </div>
+        } />
+        <Route path="/web-development" element={<WebProjects />} />
+        <Route path="/ui-ux" element={<UXProjects />} />
+      </Routes>
+    </Router>
   );
 }
 
