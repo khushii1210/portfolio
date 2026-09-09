@@ -11,7 +11,7 @@ const WebProjects = () => {
       title: "NeuroStack",
       description: "A developer knowledge platform that connects notes, code snippets, and bug solutions through an interactive knowledge graph and AI assistant.",
       image: "neurostack.png",
-      link: "https://neuro-stack-eight.vercel.app/"
+      link: "https://github.com/khushii1210/NeuroStack"
     },
     {
       id: 2,
